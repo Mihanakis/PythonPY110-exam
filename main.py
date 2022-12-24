@@ -1,8 +1,8 @@
-from conf import MODEL
-from itertools import count
-from random import randint, uniform
 import json
 import faker
+from conf import MODEL
+from random import randint, uniform
+from itertools import count
 fake = faker.Faker("ru")
 
 
@@ -19,7 +19,7 @@ def gen_counter(counter: int = 1) -> iter:
 
 def title() -> str:
     """
-    Функция для вывода строки названия книги из файла "books.txt".
+    Функция для вывода произвольной строки названия книги из файла "books.txt".
     :return: строка str с названием книги;
     """
     input_file = "books.txt"
