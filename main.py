@@ -4,7 +4,6 @@ from random import randint, uniform
 import json
 import faker
 fake = faker.Faker("ru")
-fake.isbn13()
 
 
 def gen_counter(counter: int = 1) -> iter:
