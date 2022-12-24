@@ -86,7 +86,7 @@ def author() -> list:
 
 def to_json_file(obj_data: dict, output_file: str) -> None:
     """
-    Функция для записи сгенерированных элементов в файл output.json. Файл может быть создан с нуля.
+    Функция для записи сгенерированных элементов в файл output_file типа json. Файл может быть создан с нуля.
     :param obj_data: словарь сгенерированных данных, который необходимо записать;
     :param output_file: название файла, в которое предстоит произвести запись;
     :return: None
@@ -97,7 +97,7 @@ def to_json_file(obj_data: dict, output_file: str) -> None:
 
 def clear_json(output_file: str) -> None:
     """
-    Функция для очистки файла типа json
+    Функция для очистки файла output_file типа json.
     :param output_file: название файла, который необходимо очистить;
     :return: None
     """
