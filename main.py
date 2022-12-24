@@ -53,21 +53,22 @@ def author():
 
 def to_json_file(obj_data):
     output_file = "output.json"
-    with open(output_file, "w", encoding="utf-8") as f:
+    with open(output_file, "a", encoding="utf-8") as f:
         json.dump(obj_data, f, indent=4, ensure_ascii=False)
 
 
 def main():
-    pk = next(gen_counter())
-    fields = {"title": title(),
-              "year": year(),
-              "pages": pages(),
-              "isbn13": isbn13(),
-              "rating": rating(),
-              "price": price(),
-              "author": author()}
-    data = {"model": MODEL, "pk": pk, "fields": fields}
-    to_json_file(data)
+        pk = gen_counter()
+        fields = ({"title": title(),
+                  "year": year(),
+                  "pages": pages(),
+                  "isbn13": isbn13(),
+                  "rating": rating(),
+                  "price": price(),
+                  "author": author()} for a in range(100))
+        data = ({"model": MODEL, "pk": next(pk), "fields": next(fields)} for b in range(100))
+        for c in range(100):
+            to_json_file(next(data))
 
 
 if __name__ == '__main__':
